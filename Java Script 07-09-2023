@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1 style="text-align:center;">
+    MY FIRST FORM
+</h1>
+<lable for = "fname">First Name</lable>
+<input style ="margin-left:90px"; type ="text" id ="fname" name="fname" ><br><br>
+<lable for ="lname">Last Name</lable>
+<input style ="margin-left:90px"; type ="text"id="lname" name="lname"><br><br>
+<lable for ="phone">Mobile Number</lable>
+<input style ="margin-left:60px"; type ="tel" id =phone name =phone pattren="[0-9]"><br><br>
+<lable for ="birtyhday">Date of Birth</lable>
+<input style ="margin-left:80px"; type="text" id="birthday" name ="Birthday" ><br><br>
+<button style ="margin-left:220px" onclick="callFunction()">
+submit
+</button>
+</body>
+</html>
+
+function callFunction(){
+var a= document.getElementById("fname");
+var b= document.getElementById("lname");
+var c= document.getElementById("phone");
+var d= document.getElementById("birthday");
+console.log("First name:" +" " +a.value);
+console.log("Last name:" +" "+  b.value);
+console.log("Mobile number:" +" " + c.value);
+console.log("Date Of Birth" +" "+  d.value);
+}
