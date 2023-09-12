@@ -1,0 +1,83 @@
+https://jsfiddle.net/f6pnuo2w/
+
+<!DOCTYPE html>
+<html>
+
+  <body>
+    <h1 style="text-align:center;">
+      MY FIRST FORM
+    </h1>
+
+    <lable for="fname">First Name</lable>
+    <input style="margin-left:90px" ; type="text" id="fname" name="fname"><br><br>
+    <lable for="lname">Last Name</lable>
+    <input style="margin-left:90px" ; type="text" id="lname" name="lname"><br><br>
+    <lable for="phone">Mobile Number</lable>
+    <input style="margin-left:60px" ; type="tel" id=phone name=phone pattren="[0-9]"><br><br>
+    <lable for="birtyhday">Date of Birth</lable>
+    <input style="margin-left:80px" ; type="date" id="birthday" name="Birthday"><br><br>
+    <button style="margin-left:220px" onclick="callFunction()">
+      Add
+    </button>
+  </body>
+
+</html>
+
+
+
+function callFunction() {
+  var a = document.getElementById("fname").value;
+  /*Valid First Name */
+  if (!a) {
+    alert("First name is required");
+    return;
+  } else if (a.length < 4) {
+    alert(" Invalid First Name");
+    return;
+  }
+  /*Valid Last Name */
+  var b = document.getElementById("lname").value;
+  if (!b) {
+    alert("Last Name is required");
+    return;
+  } else if (b.length < 4) {
+    alert("Invalid Last Name ");
+    return;
+  }
+  /*Valid Phone number */
+  var c = document.getElementById("phone").value;
+  if (!c) {
+    alert("Mobile Number is required");
+    return;
+  } else if (c.length < 10) {
+    alert("Invalid Mobile number ");
+    return;
+  }
+  /*Valid Date of Birth */
+  var d = document.getElementById("birthday").value;
+  if (!d) {
+    alert("Date of birth is required");
+    return;
+  } else {
+    var current = new Date();
+    var past = new Date(d);
+    if (past.getTime() >= current.getTime()) {
+      alert("Invalid Date OF Birth");
+      return;
+    }
+  }
+
+  alert("Values inserted");
+  document.getElementById("fname").value = "";
+  document.getElementById("lname").value = "";
+  document.getElementById("phone").value = "";
+  document.getElementById("birthday").value = "";
+  var obj = {
+    first_name: a,
+    last_name: b,
+    mobile_number: c,
+    dob: d
+  }
+
+  console.log(obj);
+}
