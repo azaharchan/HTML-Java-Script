@@ -1,0 +1,47 @@
+https://jsfiddle.net/kvma619g/
+
+
+<!DOCTYPE html>
+<html>
+
+  <body>
+    <h1 style="text-align:center;">
+      MY FIRST FORM
+    </h1>
+
+    <lable for="fname">First Name</lable>
+    <input style="margin-left:90px" ; type="text" id="fname" name="fname"><br><br>
+    <lable for="lname">Last Name</lable>
+    <input style="margin-left:90px" ; type="text" id="lname" name="lname"><br><br>
+    <button style="margin-left:220px" onclick="callFunction()">
+      submit
+    </button>
+  </body>
+
+</html>
+
+function function1(lname, type) {
+  if (!lname) {
+    alert(type + " is required")
+    return false;
+  } else if (lname.length < 4) {
+    alert("Invalid " + type)
+    return false;
+  } else
+    return true;
+}
+
+function callFunction() {
+  var fname = document.getElementById("fname").value;
+  var lname = document.getElementById("lname").value;
+  var type = 'First Name'
+  var qwe = 'Last Name'
+  var y = function1(fname, type);
+  if (!y)
+    return;
+  var z = function1(lname, qwe);
+  if (!z)
+    return;
+  console.log("Firstname:" + fname);
+  console.log("Firstname:" + lname);
+}
