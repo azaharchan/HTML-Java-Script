@@ -1,0 +1,63 @@
+https://jsfiddle.net/o5qmykxg/ 
+
+
+var array = [];    - global variable because this is out of the function and this varibale dispaly the output in same array along with the previous output in the same array
+
+function callFunction() {
+  var a = document.getElementById("fname").value;
+  /*Valid First Name */
+  if (!a) {
+    alert("First name is required");
+    return;
+  } else if (a.length < 4) {
+    alert(" Invalid First Name");
+    return;
+  }
+  /*Valid Last Name */
+  var b = document.getElementById("lname").value;
+  if (!b) {
+    alert("Last Name is required");
+    return;
+  } else if (b.length < 4) {
+    alert("Invalid Last Name ");
+    return;
+  }
+  /*Valid Phone number */
+  var c = document.getElementById("phone").value;
+  if (!c) {
+    alert("Mobile Number is required");
+    return;
+  } else if (c.length < 10) {
+    alert("Invalid Mobile number ");
+    return;
+  }
+  /*Valid Date of Birth */
+  var d = document.getElementById("birthday").value;
+  if (!d) {
+    alert("Date of birth is required");
+    return;
+  } else {
+    var current = new Date();
+    var past = new Date(d);
+    if (past.getTime() >= current.getTime()) {
+      alert("Invalid Date OF Birth");
+      return;
+    }
+  }
+
+  alert("Values inserted");
+  document.getElementById("fname").value = "";
+  document.getElementById("lname").value = "";
+  document.getElementById("phone").value = "";
+  document.getElementById("birthday").value = "";
+  var obj = {
+    first_name: a,
+    last_name: b,
+    mobile_number: c,
+    dob: d
+  };
+
+  array.push(obj);  -this is used to push the object into the array
+  console.log(array);
+
+}
